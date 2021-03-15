@@ -31,13 +31,3 @@ void _print_int(int var)
 
 	_putchar(var % 10 + '0');
 }
-
-/**
- * _print_float - prints a floating point number
- * @var: float to be printed
- */
-
-void _print_float(float)
-{
-
-} 
