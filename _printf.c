@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -10,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i;
-	char *ptr;
+	const char *ptr;
 	char c;
 	char *str;
 	va_list args;
@@ -19,15 +20,15 @@ int _printf(const char *format, ...)
 	ptr = format;
 	i = 0;
 
-	for (;ptr[i] != '\0'; i++)
+	for (; ptr[i] != '\0'; i++)
 	{
-		while(ptr[i] != '%')
+		while (ptr[i] != '%')
 		{
 			_putchar(ptr[i]);
 			i++;
 		}
 		i++;
-		switch(*++ptr)
+		switch (*++ptr)
 		{
 			case 'c':
 				c = va_arg(args, int);
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				str = va_arg(args, char *);
-				_print_str(str)
+				_print_str(str);
 				break;
 			case '%':
 				_putchar('%');
