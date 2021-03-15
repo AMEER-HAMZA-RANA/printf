@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	const char *ptr;
 	char c;
+	int d;
 	char *str;
 	va_list args;
 
@@ -40,6 +41,10 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				_putchar('%');
+				break;
+			case 'd':
+				d = va_arg(args, int);
+				_print_str(d);
 				break;
 		}
 	}
