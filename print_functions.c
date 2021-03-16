@@ -5,12 +5,12 @@
  * _print_str - prints a string
  * @string: string to be printed
  */
- 
+
 void _print_str(char *string)
 {
 	while (*string)
 		_putchar(*string++);
-	
+
 }
 
 /**
@@ -25,7 +25,7 @@ void _print_int(int var)
 		_putchar('-');
 		var = -var;
 	}
-	
+
 	if (var / 10)
 		_print_int(var / 10);
 
