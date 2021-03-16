@@ -28,7 +28,7 @@ int _print_str(char *string)
  * Return: length of printed characters
  */
 
-int _print_int(int var)
+int _print_int(long int var)
 {
 	int count = 0;
 

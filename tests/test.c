@@ -7,7 +7,7 @@ int main(void)
 {
 	char a = 'a';
 	char *b = NULL;
-	int c = INT_MAX;
+	long int c = INT_MAX;
 	int count0, count1;
 
 	count0 = _printf("simple statement\n");
