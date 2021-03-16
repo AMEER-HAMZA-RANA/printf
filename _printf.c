@@ -59,7 +59,6 @@ int _printf(const char *format, ...)
 			_putchar(format[count]);
 			total += 1;
 		}
-			
 	}
 	va_end(args);
 	return (total);

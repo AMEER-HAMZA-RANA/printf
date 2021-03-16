@@ -6,7 +6,7 @@
 int main(void)
 {
 	char a = 'a';
-	char *b = "Holberton";
+	char *b = NULL;
 	int c = INT_MAX;
 	int count0, count1;
 
@@ -24,5 +24,9 @@ int main(void)
 
 	count0 = _printf("%d\n", c);
 	count1 = printf("%d\n", c);
+	printf("count [%d, %d]\n", count0, count1);
+
+	count0 = _printf("%%\n");
+	count1 = printf("%%\n");
 	printf("count [%d, %d]\n", count0, count1);
 }

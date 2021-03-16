@@ -17,7 +17,8 @@ int _print_str(char *string)
 			_putchar(*string++);
 			count += 1;
 		}
-
+	else
+		return (_print_str("(null)"));
 	return (count);
 }
 
