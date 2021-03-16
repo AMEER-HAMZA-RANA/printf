@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "holberton.h"
+#include <stdio.h>
 
 /**
   * _printf - produces output according to a format.
@@ -11,42 +12,55 @@
 int _printf(const char *format, ...)
 {
 	int count;
+	int total = 0;
 	va_list args;
+	int flag = 0;
 
 	if (format == NULL)
 		return (0);
+
 	va_start(args, format);
 	for (count = 0; *(format + count) != '\0'; count++)
 	{
 		if (format[count] == '%')
-		{	
-			if ((*format + count + 1) != '\0')
-				++count;
+		{
+			flag = 1;
+		}
+		else if (flag == 1)
+		{
+			flag = 0;
 			switch (format[count])
 			{
 				case 'c':
 					_putchar(va_arg(args, int));
+					total += 1;
 					break;
 				case 's':
-					_print_str(va_arg(args, char *));
+					total += _print_str(va_arg(args, char *));
 					break;
 				case '%':
 					_putchar('%');
+					total += 1;
 					break;
 				case 'd':
-					_print_int(va_arg(args, int));
+					total += _print_int(va_arg(args, int));
 					break;
 				case 'i':
-					_print_int(va_arg(args, int));
+					total += _print_int(va_arg(args, int));
 					break;
 				default:
 					_putchar('%');
 					_putchar(format[count]);
+					total += 2;
 			}
 		}
 		else
+		{
 			_putchar(format[count]);
+			total += 1;
+		}
+			
 	}
 	va_end(args);
-	return (count);
+	return (total);
 }

@@ -1,44 +1,28 @@
 #include "../holberton.h"
-
+#include <limits.h>
+#include <stdio.h>
 
 
 int main(void)
 {
 	char a = 'a';
 	char *b = "Holberton";
-	char c = '%';
-	int d = 1000000;
-	int res;
+	int c = INT_MAX;
+	int count0, count1;
 
-	_printf("character test: %c\n", a);
+	count0 = _printf("simple statement\n");
+	count1 = _printf("simple statement\n");
+	printf("count [%d, %d]\n", count0, count1);
 
-	_printf("String test: %s\n", b);
+	count0 = _printf("%c\n", a);
+	count1 = printf("%c\n", a);
+	printf("count [%d, %d]\n", count0, count1);
 
-	_printf("percent test: %\n", c);
-	
-	_printf("decimal test: %d\n", d);
+	count0 = _printf("%s\n", b);
+	count1 = printf("%s\n", b);
+	printf("count [%d, %d]\n", count0, count1);
 
-	_printf("integer test: %i\n", d);
-
-	_printf("No args: Hello, world\n");
-
-	_printf("unknown arg: %c %c %a %c\n", a, a, a, a);
-
-	_printf("Mixed arg: char %c, int %d, string %s\n", a, d, b);
-
-	_printf("extra arg: %c, %c\n", a, a, a);
-
-	_printf("less arg: %c, %c, %c\n", a, a);
-	
-	_printf("extra %: %%%%%% %c\n", a);
-
-	res = _printf("");
-
-	_printf("Empty string: %d\n", res);
-
-	_printf(NULL);
-
-	_printf("Null string: %s\n", NULL);
-
-	return (0);
+	count0 = _printf("%d\n", c);
+	count1 = printf("%d\n", c);
+	printf("count [%d, %d]\n", count0, count1);
 }
