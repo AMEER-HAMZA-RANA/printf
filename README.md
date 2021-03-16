@@ -12,10 +12,10 @@ function _putchar prints a single character to stdout
 contains function prototypes
 
 	int _putchar(char c);
-	void _print_str(char *string);
-	void _print_int(int var);
-	void _print_double(double var);
+	int _print_str(char *string);
+	int _print_int(long int var);
 	int _printf(const char *format, ...);
+
 
 ## print_functions.c
 contains function implementation for printing
