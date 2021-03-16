@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	int count;
 	va_list args;
 
+	if (format == NULL)
+		return (0);
 	va_start(args, format);
 	for (count = 0; *(format + count) != '\0'; count++)
 	{

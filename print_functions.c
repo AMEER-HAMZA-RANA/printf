@@ -8,8 +8,11 @@
 
 void _print_str(char *string)
 {
-	while (*string)
-		_putchar(*string++);
+	if (string != NULL)
+		while (*string)
+			_putchar(*string++);
+	else
+		_print_str("(null)");
 
 }
 

@@ -1,12 +1,14 @@
 #include "../holberton.h"
 
 
+
 int main(void)
 {
 	char a = 'a';
 	char *b = "Holberton";
 	char c = '%';
 	int d = 1000000;
+	int res;
 
 	_printf("character test: %c\n", a);
 
@@ -29,5 +31,14 @@ int main(void)
 	_printf("less arg: %c, %c, %c\n", a, a);
 	
 	_printf("extra %: %%%%%% %c\n", a);
+
+	res = _printf("");
+
+	_printf("Empty string: %d\n", res);
+
+	_printf(NULL);
+
+	_printf("Null string: %s\n", NULL);
+
 	return (0);
 }
