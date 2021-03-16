@@ -1,67 +1,46 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
   * _printf - produces output according to a format.
   * @format: a character string.
   * Return: number of characters printed(
-  * excludint the null terminator)
+  * excluding the null terminator)
   */
-
 int _printf(const char *format, ...)
 {
-	int count;
-	char arg_c;
-	int arg_i;
-	char *arg_str;
-
+	unsigned int i = 0;
+	const char *ptr;
+	/* char c; */
+	char *str;
 	va_list args;
+
 	va_start(args, format);
+	ptr = format;
 
-	for (count = 0; *(format + count) != '\0'; count++)
+	for (; *ptr != '\0'; ptr++, i++)
 	{
-		if (format[count] == '%')
+		if (*ptr != '%')
 		{
-			++count;
-
-			switch(format[count])
-			{
-				case 'c':
-					arg_c = va_arg(args, int);
-					_putchar(arg_c);
-					break;
-
-				case 's':
-					arg_str = va_arg(args, char *);
-					_print_str(arg_str);
-					break;
-
-				case '%':
-					_putchar('%');
-					break;
-
-				case 'd':
-					arg_i = va_arg(args, int);
-					_print_int(arg_i);
-					break;
-
-				case 'i':
-					arg_i = va_arg(args, int);
-					_print_int(arg_i);
-					break;
-
-				default:
-					_putchar('%');
-					_putchar(format[count]);
-			}
+			_putchar(*ptr);
+			continue;
 		}
-		else
+		switch (*++ptr)
 		{
-			_putchar(format[count]);
+			case 'c':
+				/* c = va_arg(args, int); */
+				_putchar(va_arg(args, int));
+				break;
+			case 's':
+				str = va_arg(args, char *);
+				_print_str(str);
+				break;
+			case '%':
+				_putchar('%');
+				break;
 		}
 	}
-
-
 	va_end(args);
-	return (count);
+	return (i);
 }
