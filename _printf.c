@@ -19,8 +19,9 @@ int _printf(const char *format, ...)
 	for (count = 0; *(format + count) != '\0'; count++)
 	{
 		if (format[count] == '%')
-		{
-			++count;
+		{	
+			if ((*format + count) != '\0')
+				++count;
 			switch (format[count])
 			{
 				case 'c':

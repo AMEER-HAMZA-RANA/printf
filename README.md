@@ -29,7 +29,5 @@ function _print_int prints an integer to stdout
 	./build.sh
 	tests/t_printf
 
-##contributors
-
 
 
