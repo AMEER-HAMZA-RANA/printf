@@ -6,34 +6,31 @@
   * _printf - produces output according to a format.
   * @format: a character string.
   * Return: number of characters printed(
-  * excludint the null terminator)
+  * excluding the null terminator)
   */
 int _printf(const char *format, ...)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	const char *ptr;
-	char c;
-	int d;
+	/* char c; */
 	char *str;
 	va_list args;
 
 	va_start(args, format);
 	ptr = format;
-	i = 0;
 
-	for (; ptr[i] != '\0'; i++)
+	for (; *ptr != '\0'; ptr++, i++)
 	{
-		while (ptr[i] != '%')
+		if (*ptr != '%')
 		{
-			_putchar(ptr[i]);
-			i++;
+			_putchar(*ptr);
+			continue;
 		}
-		i++;
 		switch (*++ptr)
 		{
 			case 'c':
-				c = va_arg(args, int);
-				_putchar(c);
+				/* c = va_arg(args, int); */
+				_putchar(va_arg(args, int));
 				break;
 			case 's':
 				str = va_arg(args, char *);
@@ -41,10 +38,6 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				_putchar('%');
-				break;
-			case 'd':
-				d = va_arg(args, int);
-				_print_str(d);
 				break;
 		}
 	}
