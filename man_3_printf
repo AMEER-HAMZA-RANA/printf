@@ -1,41 +1,41 @@
-**#man_3_printf**
+﻿man_3_printf
 
 
-**_printf - Man page**
+_printf - Man page
 
-**##Name**
+Name
 
 _printf - Produce output according to a format.
 
-**##Synopsis**
+Synopsis
 
-`#include <stdio.h>`
-`#include <stdarg.h>`
-`int _printf(const char *format, ...);`
+#include <stdio.h>
+#include <stdarg.h>
+int _printf(const char *format, ...);
 
-**##Description**
+Description
 
 The function produces output according to a format. Format controls the output just like in the printf function from the standard library.
 
 - %c a character
 - %s a string
-- %% a single %**
+- %% a single %
 - %d a decimal (base 10) number
 - i An integer in base 10
 
-**###Return Value**
+Return Value
 
 On success, this function returns the number of characters printed(excluding the null byte used to end output to strings).
 
-**###Format**
+Format
 
 Each conversion specifier is introduced by the % character and ends with a conversion specifier (c or s or d or i). If %% is passed, % is printed.
 
-**##Example**
+Example
 
 To print character '1', string "three" and length 39;
-`_printf("%c %s %d %i", '1', "three", 39, 39);`
+_printf("%c %s %d %i", '1', "three", 39, 39);
 
-**##Authors**
+Authors
 
 
