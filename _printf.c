@@ -48,6 +48,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					total += _print_int((long)(va_arg(args, int)));
 					break;
+				case 'b':
+					total += _print_int(to_Binary(va_arg(args, int)));
+					break;
 				default:
 					_putchar('%');
 					_putchar(format[count]);
