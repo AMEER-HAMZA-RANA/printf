@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 					total += _print_int((long)(va_arg(args, int)));
 					break;
 				case 'b':
-					total += _print_int(to_Binary(va_arg(args, int)));
+					total += to_Binary(va_arg(args, int));
 					break;
 				default:
 					_putchar('%');
