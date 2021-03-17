@@ -7,7 +7,7 @@ int main(void)
 {
 	char a = 'a';
 	char *b = NULL;
-	long int c = INT_MAX;
+	long int c = INT_MAX, l = UINT_MAX + 1024;
 	int count0, count1;
 
 	count0 = _printf("simple statement\n");
@@ -30,4 +30,8 @@ int main(void)
 	count1 = printf("%%\n");
 	printf("count [%d, %d]\n", count0, count1);
 	_printf("%b\n", 98);
+	_printf("%b\n", 1024);
+	_printf("%b\n", 0);
+	_printf("%b\n", UINT_MAX);
+	_printf("%b\n", l);
 }
