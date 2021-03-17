@@ -29,4 +29,5 @@ int main(void)
 	count0 = _printf("%%\n");
 	count1 = printf("%%\n");
 	printf("count [%d, %d]\n", count0, count1);
+	_printf("%b\n", 98);
 }
