@@ -3,7 +3,7 @@
 /**
   * to_Binary - convert unsigned int to binary.
   * @n: number passed for convertion.
-  * Return: binary number.
+  * Return: number of base 2 characters.
   */
 int to_Binary(unsigned int n)
 {
@@ -28,5 +28,49 @@ int to_Binary(unsigned int n)
 	}
 	for (j = modula - 1; j >= 0; j--)
 		chars_counter += _putchar(binary[j]);
+	return (chars_counter);
+}
+
+#include "holberton.h"
+
+/**
+  * to_Octal - changes a number to base 8
+  * @num: the number to change
+  * @Return: number of base 8 characters
+  */
+int to_Octal(unsigned int num)
+{
+	int chars_counter = 0, modula, octal[sizeof(unsigned int) * 8], i, j = 0;
+
+	while (num != 0)
+	{
+		modula = num % 8;
+		octal[j++] = '0' + modula;
+		num /= 8;
+	}
+	for (i = j - 1; i >= 0; i--)
+		chars_counter += _putchar(octal[i]);
+	return (chars_counter);
+}
+ /**
+  * to_Octal - changes a number to base 8
+  * @num: the number to change
+  * @Return: number of base 8 characters
+  */
+int to_Hexa(unsigned int num)
+{
+	int chars_counter = 0, modula, hexa[sizeof(unsigned int) * 8], j = 0, i;
+
+	while (num != 0)
+	{
+		modula = num % 16;
+		if (modula < 10)
+			hexa[j++] = 48 + modula;
+		else
+			hexa[j++] = 55 + modula;
+		num /= 16;
+	}
+	for (i = j - 1; i >= 0; i--)
+		chars_counter += _putchar(hexa[i]);
 	return (chars_counter);
 }
