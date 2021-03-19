@@ -51,6 +51,18 @@ int _printf(const char *format, ...)
 				case 'b':
 					total += to_Binary(va_arg(args, int));
 					break;
+				case 'u':
+					total += _print_int((long)(va_arg(args, unsigned int)));
+					break;
+				case 'o':
+					total += to_Octal(va_arg(args, int));
+					break;
+				case 'x':
+					total += to_Hexa(va_arg(args, int));
+					break;
+				case 'X':
+					total += to_Hexa(va_arg(args, int));
+					break;
 				default:
 					_putchar('%');
 					_putchar(format[count]);
