@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 					total += to_Binary(va_arg(args, int));
 					break;
 				case 'u':
-					total += _print_int((long)(va_arg(args, unsigned int)));
+					total += _print_int(va_arg(args, unsigned int));
 					break;
 				case 'o':
 					total += to_Octal(va_arg(args, int));
