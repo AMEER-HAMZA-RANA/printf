@@ -7,8 +7,8 @@
   */
 int to_Binary(unsigned int n)
 {
-	int binary[sizeof(unsigned int) * 8], modula, j,
-	    chars_counter = 0;
+	int binary[sizeof(unsigned int) * 8],
+	modula, j, chars_counter = 0;
 	if (n == 0)
 	{
 		chars_counter += _putchar('0');
@@ -31,12 +31,10 @@ int to_Binary(unsigned int n)
 	return (chars_counter);
 }
 
-#include "holberton.h"
-
 /**
   * to_Octal - changes a number to base 8
   * @num: the number to change
-  * @Return: number of base 8 characters
+  * Return: number of base 8 characters.
   */
 int to_Octal(unsigned int num)
 {
@@ -52,11 +50,11 @@ int to_Octal(unsigned int num)
 		chars_counter += _putchar(octal[i]);
 	return (chars_counter);
 }
- /**
-  * to_Octal - changes a number to base 8
-  * @num: the number to change
-  * @Return: number of base 8 characters
-  */
+/**
+ * to_Hexa - changes a number to base 16
+ * @num: the number to change
+ * Return: number of base 16 characters.
+ */
 int to_Hexa(unsigned int num)
 {
 	int chars_counter = 0, modula, hexa[sizeof(unsigned int) * 8], j = 0, i;
