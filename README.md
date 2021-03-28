@@ -4,7 +4,7 @@
 contains _printf function implementation. The function produces output according to a format. Format controls the output just like the printf function from the standard library.
 
 ## Example
-> To print character `1`, string `three` and length `39`;
+> To print character `1`, string `three` and length `39`;  
 > _printf("%c %s %d %i", '1', "three", 39, 39);
 
 ## _putchar.c
